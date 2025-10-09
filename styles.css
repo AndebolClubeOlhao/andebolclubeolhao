@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* ================================
    SLIDER
  
@@ -18,14 +18,14 @@ body {
 
 /* Se for o caso, force o ajuste do Swiper */
 
-=======
+
 /* Slider */
->>>>>>> 7a34912c6bcd7176938c7b6dcca05e4fc2c349ea
+
 
 
 .mySwiper {
   width: 100%;
-<<<<<<< HEAD
+
   height: 54vh;
   overflow: hidden;
   position: relative !important;
@@ -110,8 +110,8 @@ body {
 
 .socialmedia_icons a:hover {
   color: #356437;
-=======
-  height: 500px;
+
+  
 }
 
 .mySwiper .swiper-slide {
@@ -147,14 +147,14 @@ body {
 
 .socialmedia_icons a:hover {
     color: #356437;
->>>>>>> 7a34912c6bcd7176938c7b6dcca05e4fc2c349ea
+
 }
 
 /* ================================
    NAVBAR
    ================================ */
 .navbar.bg-success {
-<<<<<<< HEAD
+
   background-color: #3f7a4a !important;
 }
 
@@ -168,9 +168,8 @@ body {
 .navbar .nav-link.active {
   color: #e0e0e0 !important;
 }
-=======
-    background-color: #3f7a4a !important;
-}
+
+
 
 .navbar .nav-link, .navbar .navbar-brand {
     color: #fff !important;
@@ -179,4 +178,4 @@ body {
 .navbar .nav-link:hover, .navbar .nav-link.active {
     color: #e0e0e0 !important;
 }
->>>>>>> 7a34912c6bcd7176938c7b6dcca05e4fc2c349ea
+
