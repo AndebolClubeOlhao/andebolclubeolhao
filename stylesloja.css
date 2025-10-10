@@ -158,7 +158,9 @@ main {
 .product-stock.limited i, .product-stock.limitado i {
     background-color: orange;
 }
-
+#btn-envi{
+    background-color: #356437;
+}
 /* =================================== FORMULÁRIO ================================== */
 .contacts_form {
     background: #f9f9f9;

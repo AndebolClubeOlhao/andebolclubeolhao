@@ -1,6 +1,10 @@
 :root{
     --brand-color-primary: #3f7a4a;
     --brand-color-primary-darker-1: #356437;
+    --muted: #6b6b6b;
+  --max-width: 1120px;
+  --gutter: 24px;
+  --radius: 6px;
   }
   
   /* Base */
@@ -85,7 +89,16 @@
 .sponsors-grid img { max-width:100%; height:auto; }
   
   /* Footer */
-  
+  #item-image {
+  width: 30%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+
+
   
   /* Responsividade */
   @media (max-width: 768px) {
@@ -93,6 +106,14 @@
           flex-direction: column;
           gap: 15px;
       }
+      #item-image {
+  width: 40vh;
+  height: 50vh;
+  margin-left: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
   }
   
   /* Responsividade (mantive os breakpoints do original) */
