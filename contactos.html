@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensagem do Presindente | Andebol Clube Olhão</title>
-    <link rel="stylesheet" href="styles-presi.css">
+    <title>Contactos | Andebol Clube Olhão</title>
+    <link href="styles-contactos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="img/logo_9JToiDZ.png">
-
+    <link rel="icon" type="image/png" href="https://sportizzy.s3.amazonaws.com/andebolclubeolhao/site/favicon_ZuYRbB3.png">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
-<body class="template1">
-    <header id="header" class="header1">
+<body>
+     <header id="header" class="header1">
         <div id="header-content" class="container d-flex justify-content-between align-items-center">
             <div id="branding" class="d-flex align-items-center">
                 <div class="club-badge me-3">
@@ -79,19 +79,186 @@
             </div>
         </nav>
     </header>
-   
-    <div class="wrapper">
-        <div id="content-main">
-            <div id="content-main" class="text-center">
-                <img src="img/Banner Site.png" alt="Mensagem Presidente"  class="img-fluid mb-4" style="max-width: 100%; height: auto; border-radius: 12px;">
 
+    <div id="content" class="layout2">
+        <div class="container">
+            <div class="wrapper">
+                
+
+                <div id="page-content">
+                    
+                        <div id="page_title" class="page-header ">
+                                
+	                    <h1>Contactos</h1>
+
+                        </div>
+                    
+
+                    <div class="wrapper">
+                        
+                        
+    <div id="content-main" class="with-sidebar">
+        
+	
+
+        
+	<section class="pages-app detail">
+		<p>Para qualquer dúvida ou pedido de informações utilize os contactos ou preencha o formulário de contactos.</p>
+
+<p><strong>Morada:</strong> Rua da Soledade, Nº7, 1º Centro Direito 8700-400 Olhão<br>
+<strong>Contactos: </strong>910513100 <br> <strong>Segundo Contacto:</strong> 914136355<br>
+<strong>Email:</strong> geral@andebolclubeolhao.pt<br>
+&nbsp;</p>
+
+	</section>
+
+        
+
+
+    
+        
+
+
+    
+
+<div class="template-block contacts_form">
+    
+        <header class="block-header">
+            <h4 class="block-title"><strong> Formulário de contacto</strong></h4>
+        </header>
+    
+
+	
+		
+
+		
+
+		
+		<form action="" method="post" role="form">
+			<input type="hidden" name="csrfmiddlewaretoken" value="c6ibrdHn8tZTPztu0ARJDnUsqhW5DYr8CMUi7KScChR7k5MWaTmxD5bw4tAkhu5N">
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 form-group">
+					<label class="control-label" for="id_name">Nome</label>
+					<input type="text" name="name" class="form-control" maxlength="120" required="" id="id_name">
+					
+				</div>
+				<div class="col-xs-12 col-sm-6 form-group">
+					<label class="control-label" for="id_email">Email</label>
+					<input type="text" name="email" class="form-control" maxlength="120" required="" id="id_email">
+					
+				</div>
+
+				<div class="col-xs-12 form-group">
+					<label class="control-label" for="id_subject">Assunto</label>
+					<input type="text" name="subject" class="form-control" maxlength="120" required="" id="id_subject">
+					
+
+				</div>
+				<div class="col-xs-12 form-group">
+					<label class="control-label" for="id_message">Mensagem</label>
+					<textarea name="message" cols="40" rows="10" class="form-control" required="" id="id_message"></textarea>
+					
+				</div>
+				<div class="col-xs-12 form-group">
+					<label class="control-label" for="id_terms" style="font-weight: normal;"><input type="checkbox" name="terms" required="" id="id_terms"> Aceito que os meus dados sejam tratados e utilizados para o objetivo deste formulário.</label>
+					
+				</div>
+
+        <div class="col-xs-12">
+          
+
+<div class="form-group ">
+  <div class="row">
+    <div class="col-xs-12">
+      <label class="control-label field-required" for="id_captcha_1">
+        Código de verificação
+      </label>
+    </div>
+
+    <div class="col-xs-12">
+      <button class="btn default" type="button" title="Recarregar Imagem" onclick="reloadCaptchaField(this)" id="btn-reload-captcha"><i class="fa fa-refresh " aria-hidden="true"></i></button>
+      
+          <img src="img/4a6a2f0e419b20431053ede33f100fc201b70022_" alt="captcha" class="captcha">
+<input type="hidden" name="captcha_0" value="2b4b02362ece5e01cad558bd377fa49b44bbde00" style="width: unset; display: inline;" class="form-control" required="" id="id_captcha_0"><input type="text" name="captcha_1" style="width: unset; display: inline;" class="form-control" required="" id="id_captcha_1" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+      
+
+      
+        <span class="help-block">
+          Por favor, preencha o campo com a solução de cálculo que você vê na imagem, entre subtração e soma.
+        </span>
+      
+      
+    </div>
+  </div>
+</div>
+<script type="application/javascript">
+    const reloadCaptchaField = (object) => {
+      $.getJSON("/captcha/refresh/", function (result) {
+          const $form = $(object).parents('form');
+          $form.find('.captcha').attr('src', result['image_url']);
+          $form.find('#id_captcha_0').val(result['key'])
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      reloadCaptchaField(document.getElementById('#btn-reload-captcha'));
+    }, { once: true });
+</script>
+
+        </div>
+			</div>
+
+			<input type="submit" value="Enviar" class="btn btn-primary" id="btn-envi">
+		</form>
+		
+	
+</div>
+
+
+
+    
+
+
+    </div>
+
+    <div id="content-sidebar">
+        
+
+
+    
+        
+
+
+    
+
+
+<aside class="template-block socialmedia_icons">
+    <header class="block-header">
+            <h4 class="block-title">Segue-nos</h4>
+        </header>
+      <div class="icons">
+        <a href="https://www.facebook.com/AndebolClubeOlhao/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://www.instagram.com/andebol_clube_olhao/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://www.tiktok.com/@andebolclubeolhao" target="_blank"><ion-icon name="logo-tiktok"></ion-icon></a>
+      </div>
+    </aside>
+
+
+
+    
+
+
+    </div>
+
+                        
+                    </div>
+                </div>
+
+                
             </div>
         </div>
     </div>
-
-
-
-     <footer id="footer" class="bg-dark text-white py-4">
+    <footer id="footer" class="bg-dark text-white py-4">
   <div class="container d-flex justify-content-between">
     <span>2025 © Andebol Clube Olhão</span>
     <ul class="list-inline mb-0">
@@ -103,13 +270,10 @@
   </div>
   <div class="text-center small mt-2">Criado por Leonardo Brito</div>
 </footer>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-..." crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 
-    <link rel="stylesheet" href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
-    <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6595a4d55428320019c58a3c&amp;product=inline-share-buttons" async="async"></script>
+
+     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

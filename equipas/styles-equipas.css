@@ -26,11 +26,11 @@
   #branding .club-badge img { width: 90px; height: 90px; object-fit: contain; }
   #header .club-name { color: var(--brand-color-primary); }
   
-<<<<<<< HEAD
-.page-header {
-=======
+
+
+
   .page-header {
->>>>>>> 7a34912c6bcd7176938c7b6dcca05e4fc2c349ea
+
       margin-bottom: 20px;
   }
   
