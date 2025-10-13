@@ -390,7 +390,7 @@
     messageBox.textContent = "Enviando...";
     messageBox.style.color = "blue";
 
-    const templateParams = {
+   /* const templateParams = {
       nome: form.nome.value,
       email: form.email.value,
       atleta: form.atleta.value,
@@ -412,6 +412,36 @@
       messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
       messageBox.style.color = "red";
     }
+  });*/
+  // 1️⃣ E-mail para o CLUBE
+const paramsClube = {
+  nome: form.nome.value,
+      email: form.email.value,
+      atleta: form.atleta.value,
+      descricao: form.descricao.value
+};
+
+try {
+  await emailjs.send('service_zm8grag', 'template_5le3mo5', paramsClube);
+  console.log('E-mail para o clube enviado com sucesso!');
+} catch (error) {
+  console.error('Erro ao enviar e-mail para o clube:', error.status, error.text);
+}
+
+// 2️⃣ E-mail de CONFIRMAÇÃO para o CLIENTE
+const paramsCliente = {
+  nome: form.nome.value,
+      email: form.email.value,
+      atleta: form.atleta.value,
+      descricao: form.descricao.value
+};
+
+try {
+  await emailjs.send('service_zm8grag', 'template_0mjyut8', paramsCliente);
+  console.log('E-mail de confirmação para o cliente enviado com sucesso!');
+} catch (error) {
+  console.error('Erro ao enviar e-mail para o cliente:', error.status, error.text);
+}
   });
 </script>
     
