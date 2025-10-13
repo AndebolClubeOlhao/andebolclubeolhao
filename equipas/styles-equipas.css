@@ -257,8 +257,9 @@ p{
     margin: 0 5px
 }
 
-.players-section .players-grid h3,.players-section .staff-grid h3,.staff-section .players-grid h3,.staff-section .staff-grid h3 {
-    margin-top: 0
+.players-section .players-grid h2,.players-section .staff-grid h2,.staff-section .players-grid h3,.staff-section .staff-grid h3 {
+    margin-top: 0;
+    margin-left: 15px;
 }
 
 .players-section .players-grid article,.players-section .staff-grid article,.staff-section .players-grid article,.staff-section .staff-grid article {
@@ -275,6 +276,7 @@ p{
     padding: 0 10px;
     max-width: 400px
 }
+
 
 @media(min-width: 768px) {
     .players-section .players-grid article,.players-section .staff-grid article,.staff-section .players-grid article,.staff-section .staff-grid article {
@@ -304,7 +306,8 @@ p{
     padding: 0;
     position: relative;
     background-color: rgba(0,0,0,0);
-    color: #333
+    color: #333;
+    margin-left: 15px;
 }
 
 .players-section .players-grid article .player-nr,.players-section .staff-grid article .player-nr,.staff-section .players-grid article .player-nr,.staff-section .staff-grid article .player-nr {
@@ -315,14 +318,17 @@ p{
     width: 45px;
     padding: 10px 0;
     text-align: center;
-    vertical-align: middle
+    vertical-align: middle;
+    margin-left: 25px;
+
 }
 
 .players-section .players-grid article .player-info,.players-section .players-grid article .staff-info,.players-section .staff-grid article .player-info,.players-section .staff-grid article .staff-info,.staff-section .players-grid article .player-info,.staff-section .players-grid article .staff-info,.staff-section .staff-grid article .player-info,.staff-section .staff-grid article .staff-info {
     text-transform: uppercase;
     display: table-cell;
     padding: 10px 5px;
-    vertical-align: middle
+    vertical-align: middle;
+    margin-left: 25px;
 }
 
 .players-section .players-grid article .player-info span,.players-section .players-grid article .staff-info span,.players-section .staff-grid article .player-info span,.players-section .staff-grid article .staff-info span,.staff-section .players-grid article .player-info span,.staff-section .players-grid article .staff-info span,.staff-section .staff-grid article .player-info span,.staff-section .staff-grid article .staff-info span {
@@ -348,4 +354,36 @@ p{
     .lista-jogadores {
         grid-template-columns: 1fr; /* 1 coluna em celular */
     }
+}
+/* Container principal da secção (Horário + Staff) */
+.players-section .players-grid,
+.staff-section .staff-grid {
+  display: flex;
+  flex-direction: column;  /* Empilha os elementos verticalmente */
+  align-items: flex-start; /* Alinha tudo à esquerda */
+  gap: 30px;               /* Espaço entre a imagem e o staff */
+}
+
+/* Imagem do horário */
+#item-image {
+  width: 100%;
+  max-width: 450px;        /* Mantém proporção agradável */
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+/* Cards do staff */
+.staff-section .staff-grid {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Ajuste dos artigos individuais */
+.staff-section .staff-grid article {
+  flex: 0 0 auto;
 }
