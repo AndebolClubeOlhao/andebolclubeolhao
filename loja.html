@@ -413,6 +413,41 @@
       });
   });
 </script>
+<script>
+  // Inicializa o EmailJS
+  emailjs.init({
+    publicKey: 'UVhQR1Z7ycx4TF5IG'
+  });
+
+  const form1 = document.getElementById('order-form');
+  const messageBox1 = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    messageBox.textContent = "Enviando...";
+    messageBox.style.color = "blue";
+
+    const templateParams = {
+      nome: form.nome.value,
+      email: form.email.value,
+      atleta: form.atleta.value,
+      descricao: form.descricao.value
+    };
+
+    emailjs.send('service_scyusfs', 'template_e4pis4m', templateParams)
+      .then(() => {
+        messageBox.textContent = "✅ Enviado com sucesso!";
+        messageBox.style.color = "green";
+        form.reset();
+      })
+      .catch((error) => {
+        console.error('Erro ao enviar:', error);
+        messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
+        messageBox.style.color = "red";
+      });
+  });
+</script>
     
 <script src="main.js"></script>
    
