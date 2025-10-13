@@ -20,7 +20,34 @@ body {
     color: #333;
     background-color: #fff;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 
+/* Container principal ocupa espaço restante */
+#content, #page-content {
+  flex: 1 0 auto; /* ocupa espaço restante */
+  display: flex;
+  flex-direction: column; /* garante que filhos fiquem empilhados */
+}
+
+/* Limpar floats existentes nos filhos */
+#content #content-main,
+#content #page-content.with-sidebar,
+#content #sidebar,
+#content #content-sidebar,
+#content #content-half-sidebar {
+  float: none; /* remove floats para o Flex funcionar */
+  width: 100%; /* ocupa toda a largura */
+}
+
+/* Footer fixo na base */
+footer#footer {
+  flex-shrink: 0;
+}
 a {
     text-decoration: none;
     color: inherit;
