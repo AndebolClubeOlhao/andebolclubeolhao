@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="https://sportizzy.s3.amazonaws.com/andebolclubeolhao/site/favicon_ZuYRbB3.png">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("service_scyusfs"); // substitua pelo seu User ID do EmailJS
+  })();
+</script>
+
 </head>
 <body class="template1">
 
@@ -322,7 +329,7 @@
                     <aside class="template-block contacts_form">
                         <h4 class="block-title">Formulário de Encomenda</h4>
                         <p>Por favor complete o seguinte formulário para encomendar os artigos que pretende adquirir.</p>
-                        <form action="/send-order" method="POST" role="form" id="order-form" >
+                        <form role="form" id="orderForm" >
                             <input type="hidden" name="csrfmiddlewaretoken" value="ehA0sHj40NEahfAeWsBEy457BzLR3YtkJVNtxkTvODEj2gcRVlkBLpRtK1WycQ5D">
                             <div class="mb-3">
                                 <label for="id_name" class="form-label">Nome</label>
@@ -372,11 +379,36 @@
   </div>
   <div class="text-center small mt-2">Criado por Leonardo Brito</div>
 </footer>
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const messageBox = document.getElementById("formMessage");
+    messageBox.innerHTML = "Enviando...";
+    messageBox.style.color = "blue";
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    emailjs.sendForm("service_scyusfs", "template_nct9u89", form)
+      .then(function(response) {
+        messageBox.innerHTML = "Enviado com sucesso!";
+        messageBox.style.color = "green";
+        form.reset();
+      }, function(error) {
+        messageBox.innerHTML = "Erro ao enviar: " + JSON.stringify(error);
+        messageBox.style.color = "red";
+      });
+  });
+
+  // Recarregar captcha (exemplo simples)
+  document.getElementById("btn-reload-captcha").addEventListener("click", function(){
+    const captcha = document.querySelector(".captcha");
+    captcha.src = captcha.src.split("?")[0] + "?" + new Date().getTime();
+  });
+</script>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="main.js"></script>
     <script>
-  document.getElementById("orderForm").addEventListener("submit", async function (e) {
+  document.getElementById("or").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const form = e.target;
