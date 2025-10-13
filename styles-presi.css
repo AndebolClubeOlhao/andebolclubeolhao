@@ -94,6 +94,187 @@
     height: calc(1.6rem + 1rem);
     padding: .5rem .625rem;
   }
+  #page_title.page-header{
+  max-width: var(--max-width);
+  margin: 28px auto 0;
+  padding: 0 var(--gutter);
+}
+#page_title h1{
+  font-size: 42px;
+  margin: 0;
+  color: var(--green-dark);
+  font-weight:800;
+  letter-spacing: -0.5px;
+}
+
+/* Main wrapper / content */
+.wrapper{
+  max-width: var(--max-width);
+  margin: 12px auto 60px;
+  padding: 0 var(--gutter);
+}
+
+/* Content grid: image + text */
+#content-main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.item-image {
+  width: 100%;
+}
+
+.item-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+/* Texto */
+.description--generic {
+  font-size: 0.96rem;
+  color: #222;
+  max-width: 900px;
+  text-align: justify;
+}
+
+.description--generic p {
+  margin: 0 0 1rem 0;
+}
+
+.description--generic.text-indent p {
+  text-indent: 1.2rem;
+}
+
+/* Headings inside content */
+.description--generic h2,
+.description--generic h3{
+  color: var(--green-dark);
+  margin-top: 0.25rem;
+  margin-bottom: 0.6rem;
+  font-weight:700;
+}
+.description--generic h2{ font-size:1.15rem; text-transform:uppercase; letter-spacing:0.6px; }
+.description--generic h3{ font-size:1rem; }
+
+/* Small screens: stack image over text */
+@media (max-width: 991.98px){
+  #header-content{ padding: 10px 14px; }
+  #page_title h1{ font-size: 34px; }
+  .wrapper{ margin-top: 18px; padding: 0 14px; }
+  #content-main{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .item-image img{ max-height: 360px; object-fit:cover; }
+}
+
+/* Very small screens: font-size adjustments */
+@media (max-width: 420px){
+  #page_title h1{ font-size: 28px; }
+  .description--generic{ font-size:0.95rem; }
+}
+
+/* Accessibility focus states */
+a:focus{ outline: 3px solid rgba(47,122,52,0.18); outline-offset:3px; }
+
+/* Utility */
+.img-responsive{ max-width:100%; height:auto; display:block; }
+
+
+
+#branding .club-badge img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ================================
+   HEADER
+   ================================ */
+#header .club-name {
+  color: #3f7a4a;
+  font-weight: 600;
+}
+
+#header .site-slogan {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ================================
+   SOCIAL MEDIA ICONS
+   ================================ */
+.socialmedia_icons a {
+  color: #3f7a4a;
+  transition: color 0.3s ease;
+}
+
+.socialmedia_icons a:hover {
+  color: #356437;
+
+  
+}
+#branding .club-badge img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+#header .club-name {
+    color: #3f7a4a;
+}
+
+#header .site-slogan {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.socialmedia_icons a {
+    color: #3f7a4a;
+    transition: 0.3s;
+}
+
+.socialmedia_icons a:hover {
+    color: #356437;
+
+}
+
+/* ================================
+   NAVBAR
+   ================================ */
+.navbar.bg-success {
+
+  background-color: #3f7a4a !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #e0e0e0 !important;
+}
+
+
+
+.navbar .nav-link, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: #e0e0e0 !important;
+}
+
+
   
   .members_form .form-check-input { margin-top: .35rem; }
   
