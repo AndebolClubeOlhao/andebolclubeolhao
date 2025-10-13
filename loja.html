@@ -379,15 +379,12 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-  // Inicializa o EmailJS
-  emailjs.init({
-    publicKey: 'UVhQR1Z7ycx4TF5IG'
-  });
+  emailjs.init({ publicKey: 'UVhQR1Z7ycx4TF5IG' });
 
   const form = document.getElementById('order-form');
   const messageBox = document.getElementById('formMessage');
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     messageBox.textContent = "Enviando...";
@@ -400,52 +397,21 @@
       descricao: form.descricao.value
     };
 
-    emailjs.send('service_scyusfs', 'template_nct9u89', templateParams)
-      .then(() => {
-        messageBox.textContent = "✅ Enviado com sucesso!";
-        messageBox.style.color = "green";
-        form.reset();
-      })
-      .catch((error) => {
-        console.error('Erro ao enviar:', error);
-        messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
-        messageBox.style.color = "red";
-      });
-  });
-</script>
-<script>
-  // Inicializa o EmailJS
-  emailjs.init({
-    publicKey: 'UVhQR1Z7ycx4TF5IG'
-  });
+    try {
+      // 1️⃣ E-mail para o CLUBE
+      await emailjs.send('service_scyusfs', 'template_clube', templateParams);
 
-  const form1 = document.getElementById('order-form');
-  const messageBox1 = document.getElementById('formMessage');
+      // 2️⃣ E-mail de CONFIRMAÇÃO para o CLIENTE
+      await emailjs.send('service_scyusfs', 'template_cliente', templateParams);
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    messageBox.textContent = "Enviando...";
-    messageBox.style.color = "blue";
-
-    const templateParams = {
-      nome: form.nome.value,
-      email: form.email.value,
-      atleta: form.atleta.value,
-      descricao: form.descricao.value
-    };
-
-    emailjs.send('service_scyusfs', 'template_e4pis4m', templateParams)
-      .then(() => {
-        messageBox.textContent = "✅ Enviado com sucesso!";
-        messageBox.style.color = "green";
-        form.reset();
-      })
-      .catch((error) => {
-        console.error('Erro ao enviar:', error);
-        messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
-        messageBox.style.color = "red";
-      });
+      messageBox.textContent = "✅ Enviado com sucesso!";
+      messageBox.style.color = "green";
+      form.reset();
+    } catch (error) {
+      console.error('Erro ao enviar:', error);
+      messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
+      messageBox.style.color = "red";
+    }
   });
 </script>
     
