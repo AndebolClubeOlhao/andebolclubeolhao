@@ -127,6 +127,7 @@ main {
 .caption .item-title {
     font-weight: 600;
     margin-bottom: 0.25rem;
+    color:#356437;
 }
 
 .caption .product-price {
@@ -141,6 +142,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    color: #356437;
 }
 
 .product-stock i {
