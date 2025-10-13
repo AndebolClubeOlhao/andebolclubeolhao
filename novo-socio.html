@@ -113,7 +113,7 @@
                                     <h4 class="block-title">Inscrição Novo Sócio</h4>
                                 </header>
 
-                                <form action="/send-order1" method="post" role="form" class="members_form" enctype="multipart/form-data">
+                                <form  id="order-form" class="members_form">
                                     <input type="hidden" name="csrfmiddlewaretoken" value="hOco5ZN26jUYv71wV67gFEhminsxGuoAMspRaCntU9U7g8D9UZQdSZ3IrPDePm0T">
 
                                     <div class="row">
@@ -919,6 +919,9 @@
 <div id="formMessage"></div>
 <script>
     emailjs.init({ publicKey: 'UVhQR1Z7ycx4TF5IG' });
+    const form = document.getElementById('order-form');
+  const messageBox = document.getElementById('formMessage');
+
 form.addEventListener('submit', async function (e) {
   e.preventDefault();
 
