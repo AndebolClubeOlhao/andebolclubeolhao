@@ -125,9 +125,10 @@ main {
 }
 
 .caption .item-title {
+    color: #356437;
     font-weight: 600;
     margin-bottom: 0.25rem;
-    color:#356437;
+    
 }
 
 .caption .product-price {
