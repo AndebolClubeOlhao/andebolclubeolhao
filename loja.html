@@ -375,17 +375,19 @@
 </footer>
 <div id="formMessage"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Inclua o SDK v4 do EmailJS -->
+<!-- SDK EmailJS v4 -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-  // Inicialize com sua chave pública
-  emailjs.init('UVhQR1Z7ycx4TF5IG');
+  // Inicializa o EmailJS
+  emailjs.init({
+    publicKey: 'UVhQR1Z7ycx4TF5IG'
+  });
 
   const form = document.getElementById('order-form');
   const messageBox = document.getElementById('formMessage');
 
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     messageBox.textContent = "Enviando...";
@@ -399,14 +401,15 @@
     };
 
     emailjs.send('service_scyusfs', 'template_nct9u89', templateParams)
-      .then(function(response) {
-        messageBox.textContent = "Enviado com sucesso!";
+      .then(() => {
+        messageBox.textContent = "✅ Enviado com sucesso!";
         messageBox.style.color = "green";
         form.reset();
-      }, function(error) {
-        messageBox.textContent = "Erro ao enviar: " + error.text;
+      })
+      .catch((error) => {
+        console.error('Erro ao enviar:', error);
+        messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
         messageBox.style.color = "red";
-        console.error(error);
       });
   });
 </script>
