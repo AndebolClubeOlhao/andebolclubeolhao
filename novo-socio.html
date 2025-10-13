@@ -112,7 +112,7 @@
                                 <header class="block-header">
                                     <h4 class="block-title">Inscrição Novo Sócio</h4>
                                 </header>
-
+                                <div id="formMessage" class="mb-3"></div>
                                 <form  id="order-form" class="members_form">
                                     <input type="hidden" name="csrfmiddlewaretoken" value="hOco5ZN26jUYv71wV67gFEhminsxGuoAMspRaCntU9U7g8D9UZQdSZ3IrPDePm0T">
 
@@ -861,7 +861,7 @@
     
     
 <!-- Área da mensagem -->
-<div id="formMessage"></div>
+
 <script>
     emailjs.init({ publicKey: 'UVhQR1Z7ycx4TF5IG' });
     const form = document.getElementById('order-form');
@@ -904,7 +904,7 @@ form.addEventListener('submit', async function (e) {
     // Enviar e-mail para o CLIENTE
     
 
-    messageBox.textContent = "✅ Enviado com sucesso!";
+    messageBox.textContent = "✅ Enviado com sucesso! aguarde resposta";
     messageBox.style.color = "green";
     form.reset();
 
@@ -913,7 +913,7 @@ form.addEventListener('submit', async function (e) {
     if (error.status) console.error('Status:', error.status);
     if (error.text) console.error('Texto do erro:', error.text);
 
-    messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
+    messageBox.textContent = "❌ Falha ao enviar.";
     messageBox.style.color = "red";
   }
 });

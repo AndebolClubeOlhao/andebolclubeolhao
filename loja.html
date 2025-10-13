@@ -444,7 +444,7 @@ form.addEventListener('submit', async function (e) {
     // Enviar e-mail para o CLIENTE
     
 
-    messageBox.textContent = "✅ Enviado com sucesso!";
+    messageBox.textContent = "✅ Enviado com sucesso! aguarde resposta";
     messageBox.style.color = "green";
     form.reset();
 
@@ -453,7 +453,7 @@ form.addEventListener('submit', async function (e) {
     if (error.status) console.error('Status:', error.status);
     if (error.text) console.error('Texto do erro:', error.text);
 
-    messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
+    messageBox.textContent = "❌ Falha ao enviar.";
     messageBox.style.color = "red";
   }
 });
