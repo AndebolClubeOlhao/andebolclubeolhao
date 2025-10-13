@@ -118,6 +118,7 @@ main {
 .caption {
     padding: 0.5rem 0.75rem 0 0.75rem;
     width: 100%;
+    text-decoration: none;
 }
 
 .form-check{
@@ -128,6 +129,7 @@ main {
     color: #356437;
     font-weight: 600;
     margin-bottom: 0.25rem;
+    color: #356437;
     
 }
 
