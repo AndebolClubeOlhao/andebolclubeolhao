@@ -9,12 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="https://sportizzy.s3.amazonaws.com/andebolclubeolhao/site/favicon_ZuYRbB3.png">
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function(){
-    emailjs.init("service_scyusfs"); // substitua pelo seu User ID do EmailJS
-  })();
-</script>
 
 </head>
 <body class="template1">
@@ -326,43 +320,43 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <aside class="template-block contacts_form">
-                        <h4 class="block-title">Formulário de Encomenda</h4>
-                        <p>Por favor complete o seguinte formulário para encomendar os artigos que pretende adquirir.</p>
-                        <form id="orderForm" >
-                            <input type="hidden" name="csrfmiddlewaretoken" value="ehA0sHj40NEahfAeWsBEy457BzLR3YtkJVNtxkTvODEj2gcRVlkBLpRtK1WycQ5D">
-                            <div class="mb-3">
-                                <label for="id_name" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="id_name" name="nome" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="id_email" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="id_email" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="id_subject" class="form-label">Nome do atleta ou da pessoa</label>
-                                <input type="text" class="form-control" id="id_subject" name="atleta" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="id_message" class="form-label">Descreva aqui os tamanhos e os produtos que quer</label>
-                                <textarea class="form-control" id="id_message" name="descricao" rows="5" required></textarea>
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="id_terms" name="consentimento" required>
-                                <label class="form-check-label" for="id_terms">Aceito que os meus dados sejam tratados e utilizados para o objetivo deste formulário.</label>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Código de verificação</label>
-                                <img src="img/4a6a2f0e419b20431053ede33f100fc201b70022_" alt="captcha" class="captcha mb-2">
-                                <input type="hidden" name="captcha_0" value="b8daae59ae4a1653dd107f751bc2c3f6223719ea">
-                                <input type="text" class="form-control" name="captcha_1" required>
-                                <small class="form-text text-muted">Preencha o campo com a solução de cálculo que você vê na imagem.</small>
-                                <button type="button" class="btn btn-secondary mt-2" id="btn-reload-captcha"><i class="fas fa-sync-alt"></i> Recarregar</button>
-                            </div>
-                            <button type="submit" class="btn btn-primary" id="btn-envi">Enviar</button>
-                        </form>
-                    </aside>
-                </div>
+                <aside class="template-block contacts_form">
+    <h4 class="block-title">Formulário de Encomenda</h4>
+    <p>Por favor complete o seguinte formulário para encomendar os artigos que pretende adquirir.</p>
+
+    <!-- Mensagem de feedback -->
+    <div id="formMessage" class="mb-3"></div>
+
+    <form id="order-form">
+        <div class="mb-3">
+            <label for="id_name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="id_name" name="nome" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="id_email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="id_email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="id_subject" class="form-label">Nome do atleta ou da pessoa</label>
+            <input type="text" class="form-control" id="id_subject" name="atleta" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="id_message" class="form-label">Descreva aqui os tamanhos e os produtos que quer</label>
+            <textarea class="form-control" id="id_message" name="descricao" rows="5" required></textarea>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="id_terms" name="consentimento" required>
+            <label class="form-check-label" for="id_terms">Aceito que os meus dados sejam tratados e utilizados para o objetivo deste formulário.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</aside>
+            </div>
             </div>
         </div>
     </div>
@@ -379,34 +373,40 @@
   </div>
   <div class="text-center small mt-2">Criado por Leonardo Brito</div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const messageBox = document.getElementById("formMessage");
-    messageBox.innerHTML = "Enviando...";
-    messageBox.style.color = "blue";
+    // Inicialize com sua chave pública
+    emailjs.init('UVhQR1Z7ycx4TF5IG');
 
-    emailjs.sendForm("service_scyusfs", "template_nct9u89", form)
-      .then(function(response) {
-        messageBox.innerHTML = "Enviado com sucesso!";
-        messageBox.style.color = "green";
-        form.reset();
-      }, function(error) {
-        messageBox.innerHTML = "Erro ao enviar: " + JSON.stringify(error);
-        messageBox.style.color = "red";
-      });
-  });
+    const form = document.getElementById('order-form');
+    const messageBox = document.getElementById('formMessage');
 
-  // Recarregar captcha (exemplo simples)
-  document.getElementById("btn-reload-captcha").addEventListener("click", function(){
-    const captcha = document.querySelector(".captcha");
-    captcha.src = captcha.src.split("?")[0] + "?" + new Date().getTime();
-  });
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        messageBox.innerHTML = "Enviando...";
+        messageBox.style.color = "blue";
+
+        const templateParams = {
+            nome: form.nome.value,
+            email: form.email.value,
+            atleta: form.atleta.value,
+            descricao: form.descricao.value
+        };
+
+        emailjs.send('service_scyusfs', 'template_nct9u89', templateParams)
+            .then(function(response) {
+                messageBox.innerHTML = "Enviado com sucesso!";
+                messageBox.style.color = "green";
+                form.reset();
+            }, function(error) {
+                messageBox.innerHTML = "Erro ao enviar: " + error.text;
+                messageBox.style.color = "red";
+            });
+    });
 </script>
     
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="main.js"></script>
+<script src="main.js"></script>
    
 </body>
 </html>
