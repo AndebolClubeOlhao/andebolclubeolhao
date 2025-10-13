@@ -384,13 +384,13 @@
   const form = document.getElementById('order-form');
   const messageBox = document.getElementById('formMessage');
 
-  form.addEventListener('submit', async function (e) {
+  /*form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     messageBox.textContent = "Enviando...";
     messageBox.style.color = "blue";
 
-   /* const templateParams = {
+   const templateParams = {
       nome: form.nome.value,
       email: form.email.value,
       atleta: form.atleta.value,
@@ -414,35 +414,59 @@
     }
   });*/
   // 1️⃣ E-mail para o CLUBE
-const paramsClube = {
-  nome: form.nome.value,
-      email: form.email.value,
-      atleta: form.atleta.value,
-      descricao: form.descricao.value
-};
+// Parâmetros para o template do CLUBE
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
 
-try {
-  await emailjs.send('service_zm8grag', 'template_5le3mo5', paramsClube);
-  console.log('E-mail para o clube enviado com sucesso!');
-} catch (error) {
-  console.error('Erro ao enviar e-mail para o clube:', error.status, error.text);
-}
+  messageBox.textContent = "Enviando...";
+  messageBox.style.color = "blue";
 
-// 2️⃣ E-mail de CONFIRMAÇÃO para o CLIENTE
-const paramsCliente = {
-  nome: form.nome.value,
-      email: form.email.value,
-      atleta: form.atleta.value,
-      descricao: form.descricao.value
-};
+  // Pegar os valores do formulário
+  const templateParamsClube = {
+    from_name: form.nome.value,
+    email_cliente: form.email.value,
+    pedido: form.descricao.value
+  };
 
-try {
-  await emailjs.send('service_zm8grag', 'template_0mjyut8', paramsCliente);
-  console.log('E-mail de confirmação para o cliente enviado com sucesso!');
-} catch (error) {
-  console.error('Erro ao enviar e-mail para o cliente:', error.status, error.text);
-}
-  });
+  const templateParamsCliente = {
+    from_name: form.nome.value,
+    to_name: form.atleta.value,
+    email_cliente: form.email.value,
+    pedido: form.descricao.value
+  };
+
+  try {
+    // Enviar e-mail para o CLUBE
+    const responseClube = await emailjs.send(
+      'service_zm8grag',
+      'template_5le3mo5',
+      templateParamsClube,
+      'UVhQR1Z7ycx4TF5IG'
+    );
+    console.log('E-mail para o clube enviado:', responseClube);
+
+    // Enviar e-mail para o CLIENTE
+    const responseCliente = await emailjs.send(
+      'service_zm8grag',
+      'template_0mjyut8',
+      templateParamsCliente,
+      'UVhQR1Z7ycx4TF5IG'
+    );
+    console.log('E-mail para o cliente enviado:', responseCliente);
+
+    messageBox.textContent = "✅ Enviado com sucesso!";
+    messageBox.style.color = "green";
+    form.reset();
+
+  } catch (error) {
+    console.error('Erro ao enviar e-mail:', error);
+    if (error.status) console.error('Status:', error.status);
+    if (error.text) console.error('Texto do erro:', error.text);
+
+    messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
+    messageBox.style.color = "red";
+  }
+});
 </script>
     
 <script src="main.js"></script>
