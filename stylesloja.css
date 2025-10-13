@@ -129,7 +129,7 @@ main {
     color: #356437;
     font-weight: 600;
     margin-bottom: 0.25rem;
-    color: #356437;
+    text-decoration: none;
     
 }
 
@@ -146,6 +146,7 @@ main {
     justify-content: center;
     gap: 0.5rem;
     color: #356437;
+    text-decoration: none;
 }
 
 .product-stock i {
