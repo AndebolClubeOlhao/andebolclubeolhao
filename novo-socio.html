@@ -850,7 +850,6 @@
     
 
     <!-- SCRIPTS: jQuery (atualizado) + plugins + Bootstrap 5 bundle -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-..." crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
@@ -859,61 +858,7 @@
     <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <script type="text/javascript">
-        // reloadCaptchaField - robusta, compatível com jQuery 3.x
-        const reloadCaptchaField = (buttonElt) => {
-          try {
-            $.getJSON("/captcha/refresh/")
-              .done(function(result){
-                if (!result || !result.image_url || !result.key) return;
-                const $btn = $(buttonElt);
-                const $form = $btn.closest('form');
-                $form.find('.captcha').attr('src', result.image_url);
-                $form.find('input[name="captcha_0"]').val(result.key);
-              }).fail(function(){
-                console.warn('Falha ao atualizar captcha.');
-              });
-          } catch (err) {
-            console.error('reloadCaptchaField error', err);
-          }
-        };
-
-        $(document).ready(function(){
-            // ligar evento ao botão
-            $('#btn-reload-captcha').on('click', function (e) {
-                e.preventDefault();
-                reloadCaptchaField(this);
-            });
-
-            // carregar captcha inicial (se existir botão)
-            if ($('#btn-reload-captcha').length) {
-                reloadCaptchaField($('#btn-reload-captcha')[0]);
-            }
-
-            // SLICK sliders existentes no original
-            if ($.fn.slick) {
-                $('.ads-slideshow').slick({'autoplay': true, 'arrows': false, 'dots': false, 'fade': true, 'speed': 500, 'autoplaySpeed': 4000});
-                $('.slider-slideshow').slick({'autoplay': true, 'autoplaySpeed': 5000});
-                $('.slider-featured').slick({'autoplay': true, 'autoplaySpeed': 7000, 'dots': true, 'arrows': false});
-            }
-
-            // galerias blueimp
-            $('.gallery-photos').click(function (event) {
-                var target = event.target || event.srcElement,
-                    link = target.src ? target.parentNode : target,
-                    options = { index: link, slideshowInterval: "5000", startSlideshow: true, transitionSpeed: 1000, event: event },
-                    links = this.getElementsByTagName('a');
-                blueimp.Gallery(links, options);
-            });
-
-            $('#blueimp-gallery').addClass("blueimp-gallery-controls");
-            $('#blueimp-gallery .indicator').css("display", "none");
-
-            $('.soccer_next_prev_matches .show_details a').click(function() {
-                $(".game-info-footer").toggle(0);
-            });
-        });
-    </script>
+    
     
 <!-- Área da mensagem -->
 <div id="formMessage"></div>
@@ -951,7 +896,7 @@ form.addEventListener('submit', async function (e) {
     const responseClube = await emailjs.send(
       'service_zm8grag',
       'template_0mjyut8',
-      templateParamsClube,
+      templateParams,
       'UVhQR1Z7ycx4TF5IG'
     );
     console.log('E-mail para o clube enviado:', responseClube);
