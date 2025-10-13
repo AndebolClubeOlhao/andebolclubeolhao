@@ -857,6 +857,7 @@
 
     <link rel="stylesheet" href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
     <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script type="text/javascript">
         // reloadCaptchaField - robusta, compatível com jQuery 3.x
@@ -915,40 +916,59 @@
     </script>
     
 <!-- Área da mensagem -->
-<div id="formMessage" style="margin-top:20px; font-weight:bold;"></div>
-
+<div id="formMessage"></div>
 <script>
-  document.getElementById("orderForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
+    emailjs.init({ publicKey: 'UVhQR1Z7ycx4TF5IG' });
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
 
-    const form = e.target;
-    const formData = new FormData(form);
-    const messageBox = document.getElementById("formMessage");
+  messageBox.textContent = "Enviando...";
+  messageBox.style.color = "blue";
 
-    messageBox.innerHTML = "Enviando...";
-    messageBox.style.color = "blue";
+    const templateParams = {
+        nome: form.name.value,
+        documento: form.bi.value,
+        nif: form.vatin.value,
+        nascimento: form.dob_day.value + "/" + form.dob_month.value + "/" + form.dob_year.value,
+        genero: form.gender.value,
+        email: form.email.value,
+        telefone: form.phone.value,
+        morada: form.address.value,
+        postal: form.postal_code.value,
+        cidade: form.city.value,
+        concelho: form.subregion.value,
+        distrito: form.region.value,
+        pais: form.country.value,
+        categoria: form.category.value
+        // Adicione mais campos se necessário
+    };
 
     try {
-      const response = await fetch("/send-order1", {
-        method: "POST",
-        body: formData,
-      });
+    // Enviar e-mail para o CLUBE
+    const responseClube = await emailjs.send(
+      'service_zm8grag',
+      'template_0mjyut8',
+      templateParamsClube,
+      'UVhQR1Z7ycx4TF5IG'
+    );
+    console.log('E-mail para o clube enviado:', responseClube);
 
-      const text = await response.text();
+    // Enviar e-mail para o CLIENTE
+    
 
-      if (response.ok) {
-        messageBox.innerHTML = text;
-        messageBox.style.color = "green";
-        form.reset();
-      } else {
-        messageBox.innerHTML = text;
-        messageBox.style.color = "red";
-      }
-    } catch (err) {
-      messageBox.innerHTML = "Erro de conexão com o servidor.";
-      messageBox.style.color = "red";
-    }
-  });
+    messageBox.textContent = "✅ Enviado com sucesso!";
+    messageBox.style.color = "green";
+    form.reset();
+
+  } catch (error) {
+    console.error('Erro ao enviar e-mail:', error);
+    if (error.status) console.error('Status:', error.status);
+    if (error.text) console.error('Texto do erro:', error.text);
+
+    messageBox.textContent = "❌ Falha ao enviar. Verifique a consola.";
+    messageBox.style.color = "red";
+  }
+});
 </script>
 
 

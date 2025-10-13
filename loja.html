@@ -429,12 +429,7 @@ form.addEventListener('submit', async function (e) {
     pedido: form.descricao.value
   };
 
-  const templateParamsCliente = {
-    from_name: form.nome.value,
-    to_name: form.atleta.value,
-    email_cliente: form.email.value,
-    pedido: form.descricao.value
-  };
+  
 
   try {
     // Enviar e-mail para o CLUBE
@@ -447,13 +442,7 @@ form.addEventListener('submit', async function (e) {
     console.log('E-mail para o clube enviado:', responseClube);
 
     // Enviar e-mail para o CLIENTE
-    const responseCliente = await emailjs.send(
-      'service_zm8grag',
-      'template_0mjyut8',
-      templateParamsCliente,
-      'UVhQR1Z7ycx4TF5IG'
-    );
-    console.log('E-mail para o cliente enviado:', responseCliente);
+    
 
     messageBox.textContent = "✅ Enviado com sucesso!";
     messageBox.style.color = "green";
