@@ -477,3 +477,27 @@ img {
         margin-bottom:35px
     }
 }
+/* Layout responsivo para produtos (imagem acima no mobile) */
+@media (max-width: 768px) {
+  .products-app.detail {
+    display: flex;
+    flex-direction: column; /* empilha os elementos */
+  }
+
+  .products-app.detail .item-image,
+  .products-app.detail .item-details {
+    float: none !important; /* remove floats antigos */
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .products-app.detail .item-image {
+    order: 1; /* imagem vem primeiro */
+    margin-bottom: 20px; /* espaçamento abaixo da imagem */
+  }
+
+  .products-app.detail .item-details {
+    order: 2; /* texto vem depois */
+  }
+}
