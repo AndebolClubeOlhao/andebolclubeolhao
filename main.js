@@ -1,4 +1,4 @@
-import express from "express";
+
 import path from "path";
 import { fileURLToPath } from "url";
 import nodemailer from "nodemailer";
@@ -11,7 +11,7 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const app = express();
+
 
 // Servir arquivos estáticos da pasta "public"
 app.use(express.static(path.join(__dirname)));
