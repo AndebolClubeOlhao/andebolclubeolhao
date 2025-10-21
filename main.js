@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
 
   // 1. Inicialização do Swiper (corrigido e protegido contra duplicidade)

@@ -61,14 +61,16 @@ app.post("/send-order", async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.status(200).send("Formulário enviado com sucesso!");
+    messageBox.textContent = "✅ Enviado com sucesso! aguarde resposta";
+    messageBox.style.color = "green";
   } catch (err) {
     console.error("Erro ao enviar e-mail:", err);
     res.status(500).send("Erro ao enviar o e-mail.");
   }
   try {
     await transporter.sendMail(mailOptions2);
-    res.status(200).send("Formulário enviado com sucesso!");
+    messageBox.textContent = "✅ Enviado com sucesso! aguarde resposta";
+    messageBox.style.color = "green";
   } catch (err) {
     console.error("Erro ao enviar e-mail:", err);
     res.status(500).send("Erro ao enviar o e-mail.");
