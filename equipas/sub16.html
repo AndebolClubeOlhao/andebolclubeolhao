@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipa Sub16 | Andebol Clube Olhão</title>
+    
+  </script>
     <link rel="stylesheet" href="styles-equipas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -59,16 +61,16 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="equipasDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Equipas</a>
                             <ul class="dropdown-menu" aria-labelledby="equipasDropdown">
-                                <li><a class="dropdown-item" href="sub18.html">Sub-18 Masculino</a></li>
-                                <li><a class="dropdown-item" href="sub16.html">Sub-16 Masculino</a></li>
-                                <li><a class="dropdown-item" href="sub14.html">Sub-14 Masculino</a></li>
-                                <li><a class="dropdown-item" href="sub12.html">Minis Masculino</a></li>
-                                <li><a class="dropdown-item" href="minisf.html">Minis Feminino</a></li>
-                                <li><a class="dropdown-item" href="bambis.html">Bambis Masculino</a></li>
-                                <li><a class="dropdown-item" href="bambis.html">Bambis Feminino</a></li>
-                                <li><a class="dropdown-item" href="manitas.html">Manitas Masculino</a></li>
-                                <li><a class="dropdown-item" href="manitas.html">Manitas Feminino</a></li>
-                                <li><a class="dropdown-item" href="baby.html">Baby</a></li>
+                                <li><a class="dropdown-item" href="../equipas/sub18.html">Sub-18 Masculino</a></li>
+                                <li><a class="dropdown-item" href="../equipas/sub16.html">Sub-16 Masculino</a></li>
+                                <li><a class="dropdown-item" href="../equipas/sub14.html">Sub-14 Masculino</a></li>
+                                <li><a class="dropdown-item" href="../equipas/sub12.html">Minis Masculino</a></li>
+                                <li><a class="dropdown-item" href="../equipas/minisf.html">Minis Feminino</a></li>
+                                <li><a class="dropdown-item" href="../equipas/bambis.html">Bambis Masculino</a></li>
+                                <li><a class="dropdown-item" href="../equipas/bambis.html">Bambis Feminino</a></li>
+                                <li><a class="dropdown-item" href="../equipas/manitas.html">Manitas Masculino</a></li>
+                                <li><a class="dropdown-item" href="../equipas/manitas.html">Manitas Feminino</a></li>
+                                <li><a class="dropdown-item" href="../equipas/baby.html">Baby</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a href="../noticias.html" class="nav-link">Notícias</a></li>
@@ -176,7 +178,7 @@
 <article>
   <div class="thumbnail">
     
-    <img src="../img/equipa/ponto.jpg" alt="Redondo" class="img-responsive">
+    <img src="../img/equipa/Santiago_redondo.png" alt="Redondo" class="img-responsive">
     
 
     <div class="caption">
@@ -184,10 +186,10 @@
           <div class="player-nr">4</div>
       
       <p class="player-info">
-          Redondo
+          Santiago Redondo
         
           
-            <span class="player-dob">12 anos</span>
+            <span class="player-dob">15 anos</span>
           
         
       </p>
@@ -224,39 +226,21 @@
 
 <div class="staff-wrapper">
 
-	
-
-<article>
+  <article>
     <div class="thumbnail">
-        
-            <img src="../img/orgaos/mario.jpg" alt="Mario Miguel" class="img-responsive">
-        
-        <div class="caption">
-            <p class="staff-info">
-                Mario Miguel
-            
-                <span class="staff-role">Treinador</span>
-            
-            </p>
-        </div>
+      <img src="../img/orgaos/mario.jpg" alt="Mario Miguel" class="img-responsive">
+      <div class="caption">
+        <p class="staff-info">
+          Mario Miguel
+          <span class="staff-role">Treinador</span>
+        </p>
+      </div>
     </div>
-</article>
+  </article>
 
-    
-
-	
-
-
-
-    
-
-	
-
-
-
-    
 
 </div>
+
         </div>
       </div>
     
@@ -289,6 +273,23 @@
     <link rel="stylesheet" href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
     <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6595a4d55428320019c58a3c&amp;product=inline-share-buttons" async="async"></script>
+  <script>
+  // Guarda a URL atual como "última página" ANTES de sair
+  sessionStorage.setItem("prevPage", window.location.href);
+
+  // Controla clique do botão voltar
+  history.pushState(null, "", location.href);
+
+  window.onpopstate = function () {
+    const prev = sessionStorage.getItem("prevPage");
+
+    if (prev && prev !== window.location.href) {
+      window.location.href = prev;
+    } else {
+      window.location.href = "/"; // fallback se não houver histórico guardado
+    }
+  };
+</script>
 
 </body>
 </html>
