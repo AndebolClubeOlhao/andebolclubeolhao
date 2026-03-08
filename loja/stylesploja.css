@@ -434,13 +434,13 @@ footer#footer {
 
 /* ================================
    PADRONIZAÇÃO DE IMAGENS (3:4)
-   ================================ */
+   ================================ 
 img {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
-  max-height: none;   /* opcional, melhora estética */
+  max-height: none;   /* opcional, melhora estética 
 }
 
 /* Exceções — logotipos e ícones */
@@ -520,3 +520,7 @@ img {
     text-align: left !important;
   }
 }
+.main-footer {
+    border-top: 5px solid #198754;
+}
+  

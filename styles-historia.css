@@ -259,4 +259,7 @@ a:focus{ outline: 3px solid rgba(47,122,52,0.18); outline-offset:3px; }
 .navbar .nav-link:hover, .navbar .nav-link.active {
     color: #e0e0e0 !important;
 }
+.main-footer {
+    border-top: 5px solid #198754;
+}
 

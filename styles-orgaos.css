@@ -201,4 +201,7 @@
     .box img { width: 60px; height: 60px; }
     .box { min-width: 120px; max-width: 140px; }
   }
+  .main-footer {
+    border-top: 5px solid #198754;
+}
   

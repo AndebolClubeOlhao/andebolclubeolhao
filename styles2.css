@@ -1,0 +1,143 @@
+/* Configurações Gerais */
+:root {
+    --primary-color: #198754; /* Verde Bootstrap / Clube */
+    --dark-accent: #212529;
+    --text-muted: #6c757d;
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+/* Melhorias no Slider (Swiper) */
+.mySwiper {
+    width: 100%;
+    height: 500px; /* Altura fixa para manter consistência */
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+/* Grid de Notícias */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Cartões de Notícia (News Cards) */
+.news-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.news-card:hover .card-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.category-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-data {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    color: var(--dark-accent);
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Botão Ler Mais */
+.btn-read-more {
+    display: inline-block;
+    margin-top: auto;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-read-more i {
+    margin-left: 5px;
+}
+
+.btn-read-more:hover {
+    color: #146c43;
+    padding-left: 5px;
+}
+
+/* Patrocinadores */
+.sponsors-grid article {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.sponsors-grid article:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Rodapé */
+.main-footer {
+    border-top: 4px solid var(--primary-color);
+}

@@ -303,3 +303,6 @@ a {
 #content #content-bottom {
     margin-top: 35px
 }
+.main-footer {
+    border-top: 5px solid #198754;
+}
