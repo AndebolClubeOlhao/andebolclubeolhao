@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos | Andebol Clube Olhão</title>
-  
-    <link href="styles-contactos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="styles-contactos.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://sportizzy.s3.amazonaws.com/andebolclubeolhao/site/favicon_ZuYRbB3.png">
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
 </head>
 <body>
      <header id="header" class="header1">
@@ -31,14 +31,14 @@
                 </div>
             </aside>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success mt-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success mt-0">
             <div class="container">
                 <a class="navbar-brand d-lg-none" href="#">Menu</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="mainNav" class="collapse navbar-collapse">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav" id="menuPrincipal">
                         <li class="nav-item"><a href="../index.html" class="nav-link">Início</a></li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Clube</a>
@@ -54,7 +54,6 @@
                             <a class="nav-link dropdown-toggle" href="#" id="sociosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sócios</a>
                             <ul class="dropdown-menu" aria-labelledby="sociosDropdown">
                                 <li><a class="dropdown-item" href="../novo-socio.html">Novo Sócio</a></li>
-                                
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -74,106 +73,119 @@
                         </li>
                         <li class="nav-item"><a href="noticias.html" class="nav-link">Notícias</a></li>
                         <li class="nav-item"><a href="../loja.html" class="nav-link">Loja</a></li>
-                                              
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <div id="content" class="layout2">
+    <main id="page-content" class="contactos-page">
+
+    <section class="contactos-hero">
         <div class="container">
-            <div class="wrapper">
-                
+            <span class="contactos-kicker">Fala connosco</span>
+            <h1>Contactos</h1>
+            <p>
+                Tens dúvidas, queres saber mais sobre o clube ou precisas de informações?
+                Entra em contacto com o Andebol Clube Olhão.
+            </p>
+        </div>
+    </section>
 
-                <div id="page-content">
-                    
-                        <div id="page_title" class="page-header ">
-                                
-	                    <h1>Contactos</h1>
+    <section class="contactos-content">
+        <div class="container">
+            <div class="contactos-grid">
 
-                        </div>
-                    
-
-                    <div class="wrapper">
-                        
-                        
-    <div id="content-main" class="with-sidebar">
-        
-	
-
-        
-	<section class="pages-app detail">
-		<p>Para qualquer dúvida ou pedido de informações utilize os contactos ou preencha o formulário de contactos.</p>
-
-<p><strong>Morada:</strong> Rua da Soledade, Nº7, 1º Centro Direito 8700-400 Olhão<br>
-<strong>Contactos: </strong>910513100 <br> <strong>Segundo Contacto:</strong> 914136355<br>
-<strong>Email:</strong> geral@andebolclubeolhao.pt<br>
-&nbsp;</p>
-
-	</section>
-
-        
-
-
-    
-        
-
-
-    
-
-
-
-
-
-    
-
-
-    </div>
-
-    <div id="content-sidebar">
-        
-
-
-    
-        
-
-
-    
-
-
-<aside class="template-block socialmedia_icons">
-    <header class="block-header">
-            <h4 class="block-title">Segue-nos</h4>
-        </header>
-      <div class="icons">
-        <a href="https://www.facebook.com/AndebolClubeOlhao/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-        <a href="https://www.instagram.com/andebol_clube_olhao/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-        <a href="https://www.tiktok.com/@andebolclubeolhao" target="_blank"><ion-icon name="logo-tiktok"></ion-icon></a>
-      </div>
-    </aside>
-
-
-
-    
-
-
-    </div>
-
-                        
+                <article class="contact-card destaque-contacto">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
                     </div>
-                </div>
 
-                
+                    <div>
+                        <span class="contact-label">Morada</span>
+                        <h2>Sede do Clube</h2>
+                        <p>
+                            Rua da Soledade, Nº7, 1º Centro Direito<br>
+                            8700-400 Olhão
+                        </p>
+                    </div>
+                </article>
+
+                <article class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+                        <span class="contact-label">Telefone</span>
+                        <h2>Contactos</h2>
+                        <p>
+                            <a href="tel:+351910513100">910 513 100</a><br>
+                            <a href="tel:+351914136355">914 136 355</a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <span class="contact-label">Email</span>
+                        <h2>Geral</h2>
+                        <p>
+                            <a href="mailto:geral@andebolclubeolhao.pt">
+                                geral@andebolclubeolhao.pt
+                            </a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="contact-card social-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+
+                    <div>
+                        <span class="contact-label">Redes sociais</span>
+                        <h2>Segue-nos</h2>
+
+                        <div class="contact-socials">
+                            <a href="https://www.facebook.com/AndebolClubeOlhao/" target="_blank" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/andebol_clube_olhao/" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+
+                            <a href="https://www.tiktok.com/@andebolclubeolhao" target="_blank" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="contactos-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <p>
+                    Para pedidos específicos sobre inscrições, mensalidades, convocatórias ou loja,
+                    indica sempre o nome do atleta e o escalão, se aplicável.
+                </p>
             </div>
         </div>
-    </div>
+    </section>
+
+</main>
     <footer class="main-footer bg-dark text-white py-4 mt-auto">
         <div class="container text-center">
             <div class="mb-3">
                 <img src="../img/logo_9JToiDZ.png" alt="AC Olhão" style="height: 50px; opacity: 0.8;">
             </div>
-            <span>2025 © Andebol Clube Olhão</span>
+            <span>2026 © Andebol Clube Olhão</span>
             <div class="text-center small mt-2">Criado por Leonardo Brito</div>
         </div>
     </footer>
