@@ -1,6 +1,6 @@
 /* ================================
    BASE
-=============================== */
+================================ */
 
 * {
     box-sizing: border-box;
@@ -66,7 +66,7 @@ a {
 
 #header .site-slogan {
     font-size: 0.85rem;
-    color: #666;
+    color: #666666;
 }
 
 .socialmedia_icons a,
@@ -115,31 +115,8 @@ a {
     margin-left: auto;
 }
 
-@media (max-width: 991.98px) {
-    #header-content {
-        padding: 10px 14px;
-    }
-
-    #menuPrincipal {
-        width: 100%;
-    }
-
-    #li-auth-container {
-        width: 100%;
-        margin-left: 0 !important;
-        display: flex !important;
-        justify-content: flex-end !important;
-        padding-right: 0.75rem;
-    }
-
-    #li-auth-container .btn {
-        margin-left: 0 !important;
-        max-width: max-content;
-    }
-}
-
 /* ================================
-   HOME - HERO MODERNO
+   HOME - HERO
 ================================ */
 
 .home-hero {
@@ -290,13 +267,17 @@ a {
    NOTÍCIAS
 ================================ */
 
+.home-content .news-grid,
 .news-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
+    align-items: stretch;
 }
 
+.home-content .news-card,
 .news-card {
+    height: 100%;
     background: #ffffff;
     border-radius: 26px;
     overflow: hidden;
@@ -313,17 +294,20 @@ a {
     border-color: rgba(25, 135, 84, 0.28);
 }
 
+.home-content .card-image-wrapper,
 .card-image-wrapper {
     position: relative;
-    height: 230px;
+    height: 250px;
     overflow: hidden;
-    background: #e9f2ec;
+    background: #ffffff;
 }
 
+.home-content .card-image-wrapper img,
 .card-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     display: block;
     transition: transform 0.35s ease;
 }
@@ -360,6 +344,12 @@ a {
     color: #111111;
 }
 
+.category-tag.dark {
+    background: #111827;
+    color: #ffffff;
+}
+
+.home-content .card-content,
 .card-content {
     padding: 24px;
     display: flex;
@@ -397,7 +387,9 @@ a {
     flex: 1;
 }
 
+.home-content .card-footer-custom,
 .card-footer-custom {
+    margin-top: auto;
     padding-top: 16px;
     border-top: 1px solid rgba(15, 81, 50, 0.10);
 }
@@ -472,12 +464,32 @@ a {
 }
 
 /* ================================
-   MOBILE
+   RESPONSIVO
 ================================ */
 
+@media (max-width: 991.98px) {
+    #header-content {
+        padding: 10px 14px;
+    }
+
+    #li-auth-container {
+        width: 100%;
+        margin-left: 0 !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding-right: 0.75rem;
+    }
+
+    #li-auth-container .btn {
+        margin-left: 0 !important;
+        max-width: max-content;
+    }
+}
+
 @media (max-width: 992px) {
+    .home-content .news-grid,
     .news-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .home-hero .swiper {
@@ -504,6 +516,12 @@ a {
         padding: 46px 0 58px;
     }
 
+    .home-content .news-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-content .card-image-wrapper,
     .card-image-wrapper {
         height: 220px;
     }
