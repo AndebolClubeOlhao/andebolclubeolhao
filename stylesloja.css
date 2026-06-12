@@ -1,180 +1,327 @@
-/* ============================== VARIÁVEIS DE NÚCLEOS E DIMENSÕES ================================ */
+/* ============================== VARIÁVEIS ================================ */
 :root {
-    --brand-color-primary: #3f7a4a;
-    --brand-color-primary-darker-1: #356437;
-    --brand-color-secondary: #3f7a4a;
+    --green: #2f7a34;
+    --green-dark: #235d28;
+    --green-navbar: #3f7a4a;
+    --muted: #6b6b6b;
+    --max-width: 1120px;
+    --gutter: 24px;
     --badge-width: 90px;
     --badge-height: 90px;
 }
 
-/* ================================= RESET E BASE ================================== */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure {
-    margin: 0;
-    padding: 0;
+* {
     box-sizing: border-box;
 }
 
+/* ================================= RESET E BASE ================================== */
+
+
+html,
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #222;
+    background: #fff;
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
 /* ================================= CABEÇALHO ================================= */
-#header {
-    padding: 1rem 0;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+#header,
+.header1 {
+    background: #ffffff;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-bottom: 0 !important;
+}
+
+#header-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 14px var(--gutter);
+    align-items: center;
+}
+
+#branding {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 #branding .club-badge img {
     width: var(--badge-width);
     height: var(--badge-height);
     object-fit: contain;
+    display: block;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 #header .club-name {
-    color: var(--brand-color-primary);
+    color: var(--green-dark);
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
 }
 
 #header .site-slogan {
+    color: var(--muted);
+    font-weight: 600;
     font-size: 0.85rem;
-    color: #666;
+    letter-spacing: 0.2px;
 }
 
-.socialmedia_icons a {
-    color: var(--brand-color-primary);
-    transition: 0.3s;
+
+/* ================================
+   REDES SOCIAIS
+================================ */
+
+.socialmedia_icons a,
+.template-block.socialmedia_icons .icons a {
+    color: var(--green-dark);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    transition: 0.25s ease;
 }
 
-.socialmedia_icons a:hover {
-    color: var(--brand-color-primary-darker-1);
+.socialmedia_icons a:hover,
+.template-block.socialmedia_icons .icons a:hover {
+    color: #ffffff;
+    background: var(--green-dark);
 }
+
 
 /* ================================== BARRA DE NAVEGAÇÃO =================================== */
+.navbar {
+    margin: 0 !important;
+    padding-top: 0.45rem !important;
+    padding-bottom: 0.45rem !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    border-top: 0 !important;
+}
+
 .navbar.bg-success {
-    background-color: var(--brand-color-primary) !important;
+    background-color: var(--green-navbar) !important;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-    color: #fff !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .navbar .nav-link:hover,
-.navbar .nav-link.active {
-    color: #e0e0e0 !important;
+.navbar .nav-link.active,
+.navbar .nav-link:focus {
+    color: #e6f3ea !important;
 }
+
+/* Menu ocupa a largura toda para botão Entrar ir à direita */
+#menuPrincipal {
+    width: 100%;
+    align-items: center;
+}
+
+/* Botão login/admin criado pelo main.js */
+#li-auth-container {
+    margin-left: auto !important;
+}
+
+
 
 /* ================================== CONTEÚDO PRINCIPAL =================================== */
 main {
     padding: 2rem 0;
 }
+
 #page_title {
     text-align: center;
     padding: 1rem 0;
 }
 
-/* ================================= PRODUTOS ==================================== */
-.products-app .products {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: flex-start;
+#page-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
-.products-app .products article {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    background-color: #fff;
-    flex: 1 1 calc(25% - 1.5rem);
-    max-width: calc(25% - 1.5rem);
-    display: flex;
-    flex-direction: column;
+/* =========================
+   LOJA - HERO
+========================= */
+.loja-hero {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 204, 0, 0.22), transparent 28%),
+        linear-gradient(135deg, #198754 0%, #0f5132 100%);
+    color: #fff;
+    padding: 72px 20px;
     text-align: center;
-    padding-bottom: 0.5rem;
+    margin-top: 0 !important;
+    margin-bottom: 42px;
+    position: relative;
+    overflow: hidden;
 }
 
-.products-app .products article:hover {
+.loja-hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    top: -110px;
+    right: -90px;
+}
+
+.loja-kicker {
+    display: inline-block;
+    background: rgba(255, 204, 0, 0.18);
+    color: #ffdf5d;
+    border: 1px solid rgba(255, 204, 0, 0.34);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.78rem;
+    margin-bottom: 16px;
+}
+
+.loja-hero h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 950;
+    letter-spacing: -1.5px;
+    margin-bottom: 14px;
+}
+
+.loja-hero p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.88);
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+/* =========================
+   LOJA - LAYOUT
+========================= */
+.loja-layout {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding-bottom: 70px;
+}
+
+.products-app,
+.products,
+.products-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* =========================
+   LOJA - PRODUTOS
+========================= */
+.products.products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+}
+
+.products.products-grid article {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    display: block !important;
+    float: none !important;
+    margin: 0 !important;
+}
+
+.products.products-grid article > a.thumbnail {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: #ffffff !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    border: 1px solid #ddd;
+    transition: transform 0.3s;
+}
+
+.products.products-grid article > a.thumbnail:hover {
     transform: translateY(-5px);
 }
 
-.products-app .products article a.thumbnail {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* empurra caption pro final */
-    align-items: center;
-    height: 100%;
-    text-decoration: none;
+.products.products-grid article > a.thumbnail img {
+    width: 100% !important;
+    height: 260px !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    padding: 18px !important;
+    background: #ffffff !important;
+    display: block !important;
 }
 
-.products-app .products .thumbnail img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.products.products-grid .caption,
+.products.products-grid .caption1 {
+    min-height: 170px !important;
+    height: 170px !important;
+    background: linear-gradient(135deg, #198754 0%, #0f5132 100%) !important;
+    color: #ffffff !important;
+    padding: 22px 16px !important;
+    text-align: center !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
-.caption {
-    padding: 0.5rem 0.75rem 0 0.75rem;
-    width: 100%;
-    text-decoration: none;
-}
-
-.form-check{
-    color: #333;
-}
-.caption a {
-    color: #356437;
-    text-decoration: none;
-}
-.caption .item-title {
-    color: #356437;
+.products.products-grid .item-title {
+    color: #ffffff !important;
     font-weight: 600;
     margin-bottom: 0.25rem;
     text-decoration: none;
-    
-}
-.caption1 .item-title {
-    color: #356437;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    text-decoration: none;
-    
-}
-.caption1 a {
-    color: #356437;
-    text-decoration: none;
 }
 
-.caption .product-price {
-    color: var(--brand-color-primary);
-    font-weight: bold;
-    margin-bottom: 0.25rem;
-}
-.caption1 .product-price {
-    color: var(--brand-color-primary);
-    font-weight: bold;
-    margin-bottom: 0.25rem;
+.products.products-grid .product-price {
+    color: #ffcc00 !important;
+    font-size: 1.18rem !important;
+    font-weight: 950 !important;
+    margin-bottom: 12px !important;
 }
 
-.product-stock {
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: #356437;
-    text-decoration: none;
+.products.products-grid .product-stock {
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,0.22) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    width: fit-content !important;
+    margin: 0 auto !important;
+    padding: 7px 12px !important;
+    border-radius: 999px !important;
+    font-size: 0.72rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    background: rgba(25, 135, 84, 0.10) !important;
 }
 
 .product-stock i {
@@ -189,98 +336,187 @@ main {
     background-color: green;
 }
 
-.product-stock.limited i, .product-stock.limitado i {
+.product-stock.limited i,
+.product-stock.limitado i {
     background-color: orange;
 }
-#btn-envi {
-    background-color: #000; /* Preto para um look "Streetwear" ou var(--porto-blue) */
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: 15px 30px;
-    font-weight: 700;
+
+/* =========================
+   FORMULÁRIO LOJA
+========================= */
+.contacts_form {
+    position: sticky;
+    top: 24px;
+    background: #ffffff !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(15, 81, 50, 0.12) !important;
+    box-shadow: 0 18px 42px rgba(15, 81, 50, 0.12) !important;
+    padding: 30px !important;
+    overflow: hidden;
+}
+
+.contacts_form::before {
+    content: "";
+    display: block;
+    width: 72px;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #198754, #ffcc00);
+    margin-bottom: 22px;
+}
+
+.contacts_form .block-title {
+    color: #0f5132 !important;
+    font-size: 1.65rem !important;
+    font-weight: 950 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.8px !important;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    margin-bottom: 16px !important;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(15, 81, 50, 0.12);
+}
+
+.contacts_form p {
+    color: #607066 !important;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    margin-bottom: 24px !important;
+}
+
+.contacts_form .form-label {
+    color: #173b27 !important;
+    font-weight: 850 !important;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.contacts_form .form-control {
+    min-height: 48px;
+    border-radius: 14px !important;
+    border: 1px solid #dbe8df !important;
+    background: #f8fbf9 !important;
+    color: #173b27 !important;
+}
+
+.contacts_form textarea.form-control {
+    min-height: 130px;
+}
+
+.contacts_form .form-control:focus {
+    border-color: #198754 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.12) !important;
+}
+
+.contacts_form .form-check {
+    background: #f7fbf8;
+    border: 1px solid #e2eee6;
+    border-radius: 14px;
+    padding: 14px 14px 14px 40px;
+    margin-top: 12px;
+}
+
+.contacts_form .form-check-label {
+    color: #5b6a61;
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.contacts_form .form-check-input {
+    margin-left: -25px;
+}
+
+#btn-envi {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 14px;
+    border: 0 !important;
+    border-radius: 999px !important;
+    padding: 14px 20px !important;
+    background: linear-gradient(135deg, #198754, #0f5132) !important;
+    color: #ffffff !important;
+    font-weight: 950 !important;
+    box-shadow: 0 14px 28px rgba(25, 135, 84, 0.24) !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 #btn-envi:hover {
-    background-color: var(--brand-green);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo para os Checkboxes sobre o fundo amarelo */
-.contacts_form .form-check-label {
-    color: #333;
-    font-size: 0.9rem;
-}
-/* =================================== FORMULÁRIO ================================== */
-.contacts_form {
-    /* Um degradê moderno que mistura tons de amarelo e ouro */
-    background: linear-gradient(145deg, #ffeb3b, #fbc02d);
-    
-    padding: 40px;
-    border-radius: 20px; /* Cantos arredondados para um look mais amigável */
-    border: none;
-    box-shadow: 0 15px 35px rgba(251, 192, 45, 0.3); /* Sombra suave na cor do degradê */
-    color: #333; /* Texto escuro para contraste perfeito sobre o amarelo */
-}
-
-.contacts_form h4 {
-    color: #000;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-/* Ajuste dos labels para garantir leitura sobre o amarelo */
-.contacts_form .form-label {
-    font-weight: 600;
-    color: #222;
-}
-
-/* Campos de entrada com um toque de transparência branca para brilho */
-.contacts_form .form-control {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-}
-
-.contacts_form .form-text {
-    font-size: 0.85rem;
-    color: #666;
-}
-.contacts_form .form-check-input{
-    border-color: #333;
-}
-
-/* CAPTCHA */
-.captcha {
-    display: block;
-    margin-bottom: 0.5rem;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(25, 135, 84, 0.30) !important;
 }
 
 /* =================================== RODAPÉ ================================== */
+.main-footer {
+    border-top: 5px solid #198754;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 991.98px) {
+    #header-content {
+        padding: 12px 16px;
+    }
+
+    #branding .club-badge img {
+        width: 70px;
+        height: 70px;
+    }
+
+    #header .club-name {
+        font-size: 1.15rem;
+    }
+
+    #header .site-slogan {
+        font-size: 0.75rem;
+    }
+
+    .template-block.socialmedia_icons {
+        display: none;
+    }
+
+    #menuPrincipal {
+        width: 100%;
+    }
+
+    #li-auth-container {
+        width: 100%;
+        margin-left: 0 !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding-right: 0.75rem;
+        margin-top: 0.75rem;
+    }
+
+    #li-auth-container .btn {
+        max-width: max-content;
+    }
+}
 
 /* ================================== RESPONSIVIDADE ================================== */
-@media (max-width: 992px) {
-    .products-app .products article {
-        flex: 1 1 calc(50% - 1rem);
-        max-width: calc(50% - 1rem);
+@media (max-width: 1199px) {
+    .products.products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .contacts_form {
+        position: static;
+        margin-top: 18px;
+        padding: 24px !important;
     }
 }
 
 @media (max-width: 768px) {
-    .products-app .products article {
-        flex: 1 1 100%;
-        max-width: 100%;
+    .products.products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
     }
-}
-.main-footer {
-    border-top: 5px solid #198754;
+
+    .products.products-grid article > a.thumbnail img {
+        height: 220px !important;
+        padding: 18px !important;
+    }
 }
