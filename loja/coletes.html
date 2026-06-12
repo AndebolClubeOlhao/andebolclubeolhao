@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coletes | Andebol Clube Olhão</title>
-   
-    <link rel="stylesheet" href="stylesploja.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="../img/logo_9JToiDZ.png">
+    <title>Colete | Andebol Clube Olhão</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesploja.css">
+    <link rel="icon" type="image/png" href="../img/logo_9JToiDZ.png">
 </head>
 <body>
     <header id="header" class="header1">
         <div id="header-content" class="container d-flex justify-content-between align-items-center">
             <div id="branding" class="d-flex align-items-center">
                 <div class="club-badge me-3">
-                    <a href="#"><img src="../img/logo_9JToiDZ.png" alt="logo" width="90" height="90"></a>
+                    <a href="../index.html"><img src="../img/logo_9JToiDZ.png" alt="logo" width="90" height="90"></a>
                 </div>
                 <h2 class="club-name mb-0">
                     Andebol Clube Olhão
@@ -25,20 +24,20 @@
             </div>
             <aside class="template-block socialmedia_icons">
                 <div class="icons d-flex gap-3 fs-4">
-                    <a href="https://www.facebook.com/AndebolClubeOlhao/" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/andebol_clube_olhao/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@andebolclubeolhao" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/AndebolClubeOlhao/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/andebol_clube_olhao/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@andebolclubeolhao" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                 </div>
             </aside>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success mt-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success mt-0">
             <div class="container">
                 <a class="navbar-brand d-lg-none" href="#">Menu</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="mainNav" class="collapse navbar-collapse">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav" id="menuPrincipal">
                         <li class="nav-item"><a href="../index.html" class="nav-link">Início</a></li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Clube</a>
@@ -54,7 +53,6 @@
                             <a class="nav-link dropdown-toggle" href="#" id="sociosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sócios</a>
                             <ul class="dropdown-menu" aria-labelledby="sociosDropdown">
                                 <li><a class="dropdown-item" href="../novo-socio.html">Novo Sócio</a></li>
-                                
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -74,103 +72,93 @@
                         </li>
                         <li class="nav-item"><a href="../noticias.html" class="nav-link">Notícias</a></li>
                         <li class="nav-item"><a href="../loja.html" class="nav-link">Loja</a></li>
-                                              
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div id="page-content" class="with-sidebar">
-                    
-                        <div id="page_title" class="page-header sidebar sidebar-right" style="margin-left: 480px;">
-                                
-    <h1>Colete</h1>
 
+    <main id="page-content" class="produto-page">
+        <section class="produto-hero">
+            <div class="container">
+                <a href="../loja.html" class="produto-voltar">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Voltar à loja
+                </a>
+
+                <span class="produto-kicker">Loja Oficial</span>
+                <h1>Colete</h1>
+                <p>Artigo oficial do Andebol Clube Olhão disponível por encomenda.</p>
+            </div>
+        </section>
+
+        <section class="produto-content">
+            <div class="container">
+                <div class="produto-card">
+                    <div class="produto-imagem-area">
+                        <div class="produto-badge">Por encomenda</div>
+                        <img src="../img/loja/coletes-treino.png" alt="Colete Andebol Clube Olhão" class="produto-img">
+                    </div>
+
+                    <div class="produto-info">
+                        <span class="produto-label">Detalhes do artigo</span>
+                        <h2>Colete</h2>
+
+                        <div class="produto-preco">€ 7,00</div>
+
+                        <div class="produto-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-box"></i>
+                                <div>
+                                    <strong>Stock</strong>
+                                    <span>Por encomenda</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fa-solid fa-ruler-combined"></i>
+                                <div>
+                                    <strong>Tamanhos</strong>
+                                    <span>8 · 16 · M · L</span>
+                                </div>
+                            </div>
                         </div>
-                    
 
-                    <div class="wrapper">
-                        
-                        
+                        <div class="produto-descricao">
+                            <h3>Descrição</h3>
+                            <ul>
+                            <li>Colete aberto com elástico lateral</li>
+                            <li>100% Poliéster.</li>
+                            <li>75 g/m²</li>
+                            </ul>
+                        </div>
 
-    <div id="content-main">
-        
-        
-        
-    <section class="products-app detail">
-        <div class="row">
-            <div class="item-image products-slideshow slick-initialized slick-slider">
-                
-                    
-                        <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 239px; transform: translate3d(0px, 0px, 0px);" role="listbox"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 239px;" tabindex="0" role="option" aria-describedby="slick-slide10">
-                            <img src="../img/loja/coletes-treino.png" alt="" class="img-responsive" style="width: 190%;
-  aspect-ratio: 3 / 4;
-  
-  max-height: 21rem; ">
-                        </div></div></div>
-                    
-                
-            </div>
-            <div class="item-details">
-                <h2>Detalhes</h2>
-                
-                
-                    <p><b>Stock:</b> Por encomenda</p>
-                    <p><b>Tamanhos:</b> 8 16 M L</p>
-                
-                    <p>
-                        <b>Preço:</b>
-                        
-                            €&nbsp;7,00
-                        
-                    </p>
-                
-                
-                    <h2>Descrição</h2>
-                    <p>colete</p>
+                        <div class="produto-actions">
+                            <a href="mailto:geral@andebolclubeolhao.pt?subject=Encomenda%20Colete%20ACO" class="btn-produto-primary">
+                                <i class="fa-solid fa-envelope"></i>
+                                Encomendar
+                            </a>
 
-
-
-<p>Colete aberto com elástico lateral
-</p>
-
-<p>100% Poliéster.
-</p>
-
-<p>75 g/m²
-</p>
-
-
-
-
-
-<p>&nbsp;</p>
-                
-            </div>
-        </div>
-    </section>
-
-        
-
-
-
-    </div>
-
-
-                        
+                            <a href="../loja.html" class="btn-produto-secondary">
+                                Ver mais artigos
+                            </a>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="main-footer bg-dark text-white py-4 mt-auto">
         <div class="container text-center">
             <div class="mb-3">
                 <img src="../img/logo_9JToiDZ.png" alt="AC Olhão" style="height: 50px; opacity: 0.8;">
             </div>
-            <span>2025 © Andebol Clube Olhão</span>
+            <span>2026 © Andebol Clube Olhão</span>
             <div class="text-center small mt-2">Criado por Leonardo Brito</div>
         </div>
     </footer>
-<script src="main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

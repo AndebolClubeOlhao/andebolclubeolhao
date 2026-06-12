@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bermuda | Andebol Clube Olhão</title>
-    
-    <link rel="stylesheet" href="stylesploja.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesploja.css">
     <link rel="icon" type="image/png" href="../img/logo_9JToiDZ.png">
 
 </head>
 <body>
-    <header id="header" class="header1">
+   <header id="header" class="header1">
         <div id="header-content" class="container d-flex justify-content-between align-items-center">
             <div id="branding" class="d-flex align-items-center">
                 <div class="club-badge me-3">
@@ -31,14 +31,14 @@
                 </div>
             </aside>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success mt-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success mt-0">
             <div class="container">
                 <a class="navbar-brand d-lg-none" href="#">Menu</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div id="mainNav" class="collapse navbar-collapse">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav" id="menuPrincipal">
                         <li class="nav-item"><a href="../index.html" class="nav-link">Início</a></li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Clube</a>
@@ -54,7 +54,6 @@
                             <a class="nav-link dropdown-toggle" href="#" id="sociosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sócios</a>
                             <ul class="dropdown-menu" aria-labelledby="sociosDropdown">
                                 <li><a class="dropdown-item" href="../novo-socio.html">Novo Sócio</a></li>
-                                
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -74,95 +73,103 @@
                         </li>
                         <li class="nav-item"><a href="../noticias.html" class="nav-link">Notícias</a></li>
                         <li class="nav-item"><a href="../loja.html" class="nav-link">Loja</a></li>
-                                              
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div id="page-content" class="with-sidebar">
-                    
-                        <div id="page_title" class="page-header sidebar sidebar-right" style="margin-left: 380px;">
-                                
-    <h1>Bermuda</h1>
+    <main id="page-content" class="produto-page">
 
-                        </div>
-                    
+        <section class="produto-hero">
+            <div class="container">
+                <a href="../loja.html" class="produto-voltar">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Voltar à loja
+                </a>
 
-                    <div class="wrapper">
-                        
-                        
-
-    <div id="content-main">
-        
-        
-        
-    <section class="products-app detail">
-        <div class="row">
-            <div class="item-image products-slideshow slick-initialized slick-slider">
-                
-                    
-                        <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 239px; transform: translate3d(0px, 0px, 0px);" role="listbox"><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 239px;" tabindex="0" role="option" aria-describedby="slick-slide10">
-                            <img src="../img/loja/bermuda.PNG.400x400_q85_crop-smart_scale.png" alt="" class="img-responsive">
-                        </div></div></div>
-                    
-                
+                <span class="produto-kicker">Loja Oficial</span>
+                <h1>Bermuda</h1>
+                <p>Artigo oficial do Andebol Clube Olhão disponível por encomenda.</p>
             </div>
-            <div class="item-details">
-                <h2>Detalhes</h2>
-                
-                
-                    <p><b>Stock:</b> Por encomenda</p>
-                    <p><b>Tamanhos:</b> 2 4 6 8 10 12 S M L XL 2XL</p>
-                
-                    <p>
-                        <b>Preço:</b>
-                        
-                            €&nbsp;15,00
-                        
-                    </p>
-                
-                
-                    <h2>Descrição</h2>
-                    <p>Calção de criança unissexo</p>
+        </section>
 
-<p>Bolsos laterais</p>
+        <section class="produto-content">
+            <div class="container">
+                <div class="produto-card">
 
-<p>Cintura elástica com cordão ajustável
-</p>
+                    <div class="produto-imagem-area">
+                        <div class="produto-badge">Por encomenda</div>
 
-<p>Ponto liso
-</p>
-
-<p>100% algodão
-</p>
-
-<p>200 g/m²</p>
-
-
-
-<p>&nbsp;</p>
-                
-            </div>
-        </div>
-    </section>
-
-        
-
-
-
-    </div>
-
-
-                        
+                        <img 
+                            src="../img/loja/bermuda.PNG.400x400_q85_crop-smart_scale.png" 
+                            alt="Bermuda Andebol Clube Olhão"
+                            class="produto-img"
+                        >
                     </div>
+
+                    <div class="produto-info">
+                        <span class="produto-label">Detalhes do artigo</span>
+                        <h2>Bermuda</h2>
+
+                        <div class="produto-preco">€ 15,00</div>
+
+                        <div class="produto-meta">
+                            <div class="meta-item">
+                                <i class="fa-solid fa-box"></i>
+                                <div>
+                                    <strong>Stock</strong>
+                                    <span>Por encomenda</span>
+                                </div>
+                            </div>
+
+                            <div class="meta-item">
+                                <i class="fa-solid fa-ruler-combined"></i>
+                                <div>
+                                    <strong>Tamanhos</strong>
+                                    <span>2 · 4 · 6 · 8 · 10 · 12 · S · M · L · XL · 2XL</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="produto-descricao">
+                            <h3>Descrição</h3>
+
+                            <ul>
+                                <li>Calção de criança unissexo</li>
+                                <li>Bolsos laterais</li>
+                                <li>Cintura elástica com cordão ajustável</li>
+                                <li>Ponto liso</li>
+                                <li>100% algodão</li>
+                                <li>200 g/m²</li>
+                            </ul>
+                        </div>
+
+                        <div class="produto-actions">
+                            <a 
+                                href="mailto:geral@andebolclubeolhao.pt?subject=Encomenda%20Bermuda%20ACO" 
+                                class="btn-produto-primary"
+                            >
+                                <i class="fa-solid fa-envelope"></i>
+                                Encomendar
+                            </a>
+
+                            <a href="../loja.html" class="btn-produto-secondary">
+                                Ver mais artigos
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
-    <footer class="main-footer bg-dark text-white py-4 mt-auto">
+            </div>
+        </section>
+
+    </main>
+                <footer class="main-footer bg-dark text-white py-4 mt-auto">
         <div class="container text-center">
             <div class="mb-3">
                 <img src="../img/logo_9JToiDZ.png" alt="AC Olhão" style="height: 50px; opacity: 0.8;">
             </div>
-            <span>2025 © Andebol Clube Olhão</span>
+            <span>2026 © Andebol Clube Olhão</span>
             <div class="text-center small mt-2">Criado por Leonardo Brito</div>
         </div>
     </footer>
