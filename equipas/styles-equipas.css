@@ -1,23 +1,30 @@
 :root {
     --brand-color-primary: #3f7a4a;
     --brand-color-primary-darker-1: #356437;
-    --brand-color-secondary: #3f7a4a;
     --badge-width: 90px;
     --badge-height: 90px;
 }
 
-/* ================================= RESET E BASE ================================== */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure {
+/* ================================
+   BASE
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+    color: #1f2933;
+    background: #f4f7f5;
 }
 
 a {
@@ -25,196 +32,542 @@ a {
     color: inherit;
 }
 
-/* ================================= CABEÇALHO ================================= */
-#header {
-    padding: 1rem 0;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
+/* ================================
+   HEADER / NAVBAR
+================================ */
+
+#header,
+.header1 {
+    background: #ffffff;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#header-content {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    align-items: center;
+}
+
+#branding {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 #branding .club-badge img {
     width: var(--badge-width);
     height: var(--badge-height);
     object-fit: contain;
+    display: block;
 }
 
 #header .club-name {
     color: var(--brand-color-primary);
+    font-weight: 700;
 }
 
 #header .site-slogan {
+    color: #666666;
     font-size: 0.85rem;
-    color: #666;
 }
 
-.socialmedia_icons a {
+.socialmedia_icons a,
+.template-block.socialmedia_icons .icons a {
     color: var(--brand-color-primary);
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
-.socialmedia_icons a:hover {
+.socialmedia_icons a:hover,
+.template-block.socialmedia_icons .icons a:hover {
     color: var(--brand-color-primary-darker-1);
 }
 
-/* ================================== BARRA DE NAVEGAÇÃO =================================== */
+.navbar {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
 .navbar.bg-success {
     background-color: var(--brand-color-primary) !important;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-    color: #fff !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .navbar .nav-link:hover,
-.navbar .nav-link.active {
+.navbar .nav-link.active,
+.navbar .nav-link:focus {
     color: #e0e0e0 !important;
 }
-/* --- Estilização Geral da Secção de Equipas --- */
-.teams-app {
-    background-color: #f8f9fa;
-    padding: 40px 0;
-}
 
-.players-section h2, .staff-section h2 {
+/* ================================
+   EQUIPAS - HERO
+================================ */
+
+.equipa-hero {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 204, 0, 0.20), transparent 28%),
+        linear-gradient(135deg, #198754 0%, #0f5132 100%);
+    color: #ffffff;
+    padding: 82px 20px;
     text-align: center;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #198754; /* Verde do clube */
-    margin-bottom: 30px;
     position: relative;
-}
-
-/* Linha decorativa por baixo dos títulos */
-.players-section h2::after, .staff-section h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #fd7e14; /* Cor de destaque (laranja/amarelo) */
-    margin: 10px auto;
-}
-
-/* --- Layout da Grelha de Posições --- */
-.player-position h3 {
-    background: #212529;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    display: inline-block;
-    margin-bottom: 25px;
-}
-
-.players-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 25px;
-    margin-bottom: 50px;
-}
-
-/* --- Estilo dos Cards dos Jogadores --- */
-article {
-    transition: transform 0.3s ease;
-}
-
-.thumbnail {
-    border: none !important;
-    background: #fff;
-    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.equipa-hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    top: -110px;
+    right: -90px;
+}
+
+.equipa-hero .container {
     position: relative;
-    padding: 0 !important;
-    
+    z-index: 2;
+}
+
+.equipa-kicker {
+    display: inline-block;
+    background: rgba(255, 204, 0, 0.18);
+    color: #ffdf5d;
+    border: 1px solid rgba(255, 204, 0, 0.34);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.78rem;
+    margin-bottom: 18px;
+}
+
+.equipa-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 950;
+    letter-spacing: -1.8px;
+    line-height: 1.02;
+    margin-bottom: 16px;
+}
+
+.equipa-hero p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.12rem;
+    line-height: 1.7;
+}
+
+/* ================================
+   EQUIPAS - PÁGINA
+================================ */
+
+.teams-app,
+.equipa-page {
+    background: #f4f7f5;
+    padding: 56px 0 82px;
+}
+
+.players-section,
+.staff-section {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.players-section > h2,
+.staff-section > h2 {
+    color: #0f5132;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 950;
+    letter-spacing: -1.2px;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+/* Imagem horário */
+#item-image {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto 30px;
+    border-radius: 28px;
+    box-shadow: 0 22px 56px rgba(15, 81, 50, 0.13);
+    border: 1px solid rgba(25, 135, 84, 0.12);
+    background: #ffffff;
+    padding: 10px;
+}
+
+/* Blocos por posição */
+.players-by-position {
+    margin-bottom: 48px;
+}
+
+.player-position {
+    margin-bottom: 20px;
+}
+
+.player-position h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #0f5132;
+    background: #ffffff;
+    border: 1px solid rgba(25, 135, 84, 0.12);
+    border-radius: 999px;
+    padding: 12px 20px;
+    font-size: 1.25rem;
+    font-weight: 950;
+    box-shadow: 0 12px 26px rgba(15, 81, 50, 0.08);
+}
+
+.player-position h3::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: #198754;
+    box-shadow: 0 0 0 5px rgba(25, 135, 84, 0.12);
+}
+
+/* ================================
+   PLANTEL - ESTILO LIMPO SEM CARD PESADO
+================================ */
+
+/* Grelha */
+.players-wrapper,
+.staff-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+    align-items: start;
+}
+
+.players-wrapper article,
+.staff-wrapper article {
+    width: 100%;
+}
+
+/* Cada jogador deixa de parecer "cartão" */
+.thumbnail {
+    position: relative;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
+    height: auto;
+    transition: transform 0.2s ease;
 }
 
 .thumbnail:hover {
-    transform: translateY(-10px);
+    transform: translateY(-4px);
+    box-shadow: none;
 }
 
+/* Moldura da foto: limpa, retangular e uniforme */
 .thumbnail img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover; /* Garante que as fotos fiquem alinhadas */
-    background: #e9ecef;
+    width: 100% !important;
+    height: 390px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: block;
+    padding: 0 !important;
+    background: #eaf2ed;
+    border-radius: 22px 22px 0 0;
+    border: 1px solid rgba(25, 135, 84, 0.16);
+    border-bottom: 0;
+    box-shadow: 0 12px 26px rgba(15, 81, 50, 0.10);
 }
 
-/* --- Info do Jogador (Caption) --- */
-.caption {
-    padding: 15px;
-    text-align: center;
-    background: #fff;
-}
 
+/* Número do jogador */
 .player-nr {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(25, 135, 84, 0.9);
-    color: white;
-    width: 35px;
-    height: 35px;
+    top: 14px;
+    left: 14px;
+    z-index: 3;
+
+    min-width: 52px;
+    height: 52px;
+    padding: 0 10px;
+    border-radius: 55px;
+
+    background: #0f5132;
+    color: #ffffff;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    font-weight: bold;
-    font-size: 0.9rem;
-    border: 2px solid #fff;
+
+    font-size: 1.15rem;
+    font-weight: 950;
+    line-height: 1;
+
+    border: 3px solid #ffffff;
+    box-shadow: 0 10px 24px rgba(15, 81, 50, 0.28);
 }
 
-.player-info {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin: 0;
-    color: #212529;
+.player-nr {
+    min-width: 52px;
+    padding: 0 10px;
 }
 
-.player-dob {
-    display: block;
-    font-size: 0.85rem;
-    color: #6c757d;
-    font-weight: 400;
-    margin-top: 5px;
-}
-
-/* --- Staff Section --- */
-.staff-wrapper {
+/* Nome do jogador */
+.caption {
+    background: linear-gradient(135deg, #198754 0%, #0f5132 100%);
+    padding: 18px 14px 20px;
+    text-align: center;
+    border-top: 4px solid #ffcc00;
+    border-radius: 0 0 22px 22px;
+    box-shadow: 0 12px 26px rgba(15, 81, 50, 0.10);
+    min-height: 98px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
 }
-.staff-wrapper article {
-    
-    width: 240px; /* Largura fixa para o staff bater certo com os jogadores */
-    flex: 0 0 240px;
-    
+
+.player-info,
+.staff-info {
+    color: #ffffff;
+    font-size: 1.12rem;
+    font-weight: 950;
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: -0.2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
 }
+
+.player-dob,
 .staff-role {
-    display: block;
-    color: #198754;
-    font-weight: bold;
-    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 9px auto 0;
+    color: #0f5132;
+    background: #ffcc00;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 0.76rem;
+    font-weight: 950;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+/* Staff */
+.staff-section {
+    margin-top: 60px;
 }
 
-/* Imagem de horário/topo */
-#item-image {
-    display: block;
-    margin: 0 auto 30px auto;
-    max-width: 350px; /* Define o tamanho fixo que achares melhor */
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.staff-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-@media (max-width: 576px) {
-    #item-image {
-        max-width: 90%; /* No telemóvel ele cresce um pouco para ser legível */
-    }
+.staff-wrapper .thumbnail img {
+    height: 390px !important;
 }
+
+
+/* ================================
+   FOOTER
+================================ */
+
 .main-footer {
     border-top: 5px solid #198754;
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 1100px) {
+    .players-wrapper {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .players-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .staff-wrapper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .equipa-hero {
+        padding: 58px 18px;
+    }
+
+    .teams-app,
+    .equipa-page {
+        padding: 34px 0 56px;
+    }
+
+    .players-wrapper,
+    .staff-wrapper {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .thumbnail img,
+    .staff-wrapper .thumbnail img {
+        height: 420px !important;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .caption {
+        border-radius: 0 0 20px 20px;
+    }
+
+    .template-block.socialmedia_icons {
+        display: none;
+    }
+
+    #branding .club-badge img {
+        width: 70px;
+        height: 70px;
+    }
+
+    #header .club-name {
+        font-size: 1.15rem;
+    }
+
+    #header .site-slogan {
+        font-size: 0.75rem;
+    }
+
+    #item-image {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .thumbnail img,
+    .staff-wrapper .thumbnail img {
+        height: 360px !important;
+    }
+}
+
+/* ================================
+   HORÁRIO POR ESCRITO
+================================ */
+
+.horario-section {
+    max-width: 900px;
+    margin: 0 auto 52px;
+}
+
+.horario-card {
+    background: #ffffff;
+    border-radius: 26px;
+    border: 1px solid rgba(25, 135, 84, 0.14);
+    box-shadow: 0 18px 42px rgba(15, 81, 50, 0.10);
+    overflow: hidden;
+}
+
+.horario-header {
+    background: linear-gradient(135deg, #198754 0%, #0f5132 100%);
+    color: #ffffff;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.horario-header i {
+    width: 54px;
+    height: 54px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.14);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+}
+
+.horario-header span {
+    display: block;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+}
+
+.horario-header h3 {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 950;
+    letter-spacing: -0.5px;
+}
+
+.horario-list {
+    display: grid;
+}
+
+.horario-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 18px;
+    align-items: center;
+    padding: 20px 28px;
+    border-bottom: 1px solid rgba(25, 135, 84, 0.10);
+}
+
+.horario-item:last-child {
+    border-bottom: 0;
+}
+
+.horario-dia {
+    color: #0f5132;
+    font-weight: 950;
+    font-size: 1.02rem;
+}
+
+.horario-info strong {
+    display: block;
+    color: #198754;
+    font-size: 1.15rem;
+    font-weight: 950;
+    margin-bottom: 3px;
+}
+
+.horario-info span {
+    color: #607066;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .horario-card {
+        border-radius: 22px;
+    }
+
+    .horario-header {
+        padding: 22px;
+    }
+
+    .horario-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 18px 22px;
+    }
+
+    .horario-header h3 {
+        font-size: 1.35rem;
+    }
 }
